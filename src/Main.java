@@ -33,14 +33,24 @@ public class Main {
 		
 		
 		// Asking user for his choice
-		scanner = new Scanner(System.in);
-		System.out.println("Make your choice - type: \n"
-							+ "R = Rock \n"
-							+ "P = Paper \n"
-							+ "S = Scisors");
-		usersChoice = scanner.nextLine();
-		usersChoice = usersChoice.toUpperCase();
-		
+			//Validating user's choice
+		while(true){
+			scanner = new Scanner(System.in);
+			System.out.println("Make your choice - type: \n"
+								+ "R = Rock \n"
+								+ "P = Paper \n"
+								+ "S = Scisors");
+			usersChoice = scanner.nextLine();
+			usersChoice = usersChoice.toUpperCase();
+			if(usersChoice.equals("R"))
+				break;
+			else if(usersChoice.equals("P"))
+				break;
+			else if(usersChoice.equals("S"))
+				break;
+			else
+				System.out.println("Not a valid response. Try again");
+		}
 	}
 	
 	public void checkWins() {
