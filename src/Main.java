@@ -5,8 +5,8 @@ public class Main {
 
 	static boolean gameStarted = false;
 	static Random random;
-	Scanner scanner;
-	String usersChoice;
+	static Scanner scanner;
+	static String usersChoice;
 	static String computersChoice;
 	int usersPoints = 0;
 	int computersPoints = 0;
@@ -32,7 +32,14 @@ public class Main {
 		}
 		
 		
-		// Asking user for 
+		// Asking user for his choice
+		scanner = new Scanner(System.in);
+		System.out.println("Make your choice - type: \n"
+							+ "R = Rock \n"
+							+ "P = Paper \n"
+							+ "S = Scisors");
+		usersChoice = scanner.nextLine();
+		usersChoice = usersChoice.toUpperCase();
 		
 	}
 	
