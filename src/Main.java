@@ -112,10 +112,24 @@ public class Main {
 		System.out.println("You : Computer \n"
 						+ "  "+uPoints + " : "+ cPoints);
 		System.out.println("--------------------");
+		
+		nextRound();
 	}
 	
-	public void nextRound() {
-		
+	public static void nextRound() {
+		scanner = new Scanner(System.in);
+		System.out.println("Next round? (y/n) ");
+		uChoice = scanner.nextLine();
+		uChoice = uChoice.toUpperCase();
+		System.out.println(uChoice);
+		if(uChoice.equals("Y")) {
+//			break;
+			startGame();
+		}
+		else if(uChoice.equals("N")) {
+			System.out.println("Thanks for playing. Have a nice day :)");
+			System.exit(0);
+		}
 	}
 	
 	public static void main(String[] args) {
