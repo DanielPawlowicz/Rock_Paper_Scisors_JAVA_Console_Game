@@ -31,13 +31,13 @@ public class Main {
 				break;
 		}
 		
-		System.out.println(cChoice);
+//		System.out.println(cChoice);
 		
 		// Asking user for his choice
 			//Validating user's choice
 		while(true){
 			scanner = new Scanner(System.in);
-			System.out.println("Make your choice - type: \n"
+			System.out.println("Make your choice: \n"
 								+ "R = Rock \n"
 								+ "P = Paper \n"
 								+ "S = Scisors");
@@ -56,7 +56,15 @@ public class Main {
 		checkWins();
 	}
 	
+	public static void info(String u, String c) {
+		System.out.println("Your choice:       "+u);
+		System.out.println("Computer's choice: "+c);
+		System.out.println();
+	}
+	
 	public static void checkWins() {
+		
+		info(uChoice, cChoice);
 		
 		if(uChoice.equals(cChoice)) {
 			
@@ -107,10 +115,10 @@ public class Main {
 	}
 	
 	public static void displayScore() {
-		System.out.println("--------------------");
-		System.out.println("Score:");
+		System.out.println("------SCORE-------");
+//		System.out.println("Score:");
 		System.out.println("You : Computer \n"
-						+ "  "+uPoints + " : "+ cPoints);
+						+ "  "+(uPoints/10)+(uPoints%10) + " : "+ (cPoints/10)+(cPoints%10));
 		System.out.println("--------------------");
 		
 		nextRound();
@@ -122,9 +130,10 @@ public class Main {
 			System.out.println("Next round? (y/n) ");
 			uChoice = scanner.nextLine();
 			uChoice = uChoice.toUpperCase();
-			System.out.println(uChoice);
+//			System.out.println(uChoice);
+			
 			if(uChoice.equals("Y")) {
-				System.out.println("-------NEW-ROUND-------");
+				System.out.println("\n\n-------NEW-ROUND-------");
 				break;
 			}
 			else if(uChoice.equals("N")) {
