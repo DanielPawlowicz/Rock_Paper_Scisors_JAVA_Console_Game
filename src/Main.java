@@ -6,10 +6,10 @@ public class Main {
 	static boolean gameStarted = false;
 	static Random random;
 	static Scanner scanner;
-	static String usersChoice;
-	static String computersChoice;
-	int usersPoints = 0;
-	int computersPoints = 0;
+	static String uChoice;
+	static String cChoice;
+	static int uPoints = 0;
+	static int cPoints = 0;
 	
 	
 	public static void startGame() {
@@ -21,16 +21,17 @@ public class Main {
 		int rNumber = random.nextInt(3);
 		switch(rNumber) {
 			case 0:
-				computersChoice = "Rock";
+				cChoice = "R";
 				break;
 			case 1:
-				computersChoice = "Paper";
+				cChoice = "P";
 				break;
 			case 2:
-				computersChoice = "Scisors";
+				cChoice = "S";
 				break;
 		}
 		
+		System.out.println(cChoice);
 		
 		// Asking user for his choice
 			//Validating user's choice
@@ -40,24 +41,60 @@ public class Main {
 								+ "R = Rock \n"
 								+ "P = Paper \n"
 								+ "S = Scisors");
-			usersChoice = scanner.nextLine();
-			usersChoice = usersChoice.toUpperCase();
-			if(usersChoice.equals("R"))
+			uChoice = scanner.nextLine();
+			uChoice = uChoice.toUpperCase();
+			if(uChoice.equals("R"))
 				break;
-			else if(usersChoice.equals("P"))
+			else if(uChoice.equals("P"))
 				break;
-			else if(usersChoice.equals("S"))
+			else if(uChoice.equals("S"))
 				break;
 			else
 				System.out.println("Not a valid response. Try again");
 		}
+		
+		checkWins();
 	}
 	
-	public void checkWins() {
+	public static void checkWins() {
+		
+		if(uChoice.equals(cChoice)) {
+			
+			System.out.println("Draw!");
+			
+				} else if(uChoice.equals("R")) {
+					
+					if(cChoice.equals("S"))
+						uPoints++;
+					else
+						cPoints++;
+					
+		//			System.out.println("Error");
+					
+				} else if(uChoice.equals("P")) {
+					
+					if(cChoice.equals("R"))
+						uPoints++;
+					else
+						cPoints++;
+					
+		//			System.out.println("Error");
+					
+				} else {
+					if(cChoice.equals("P"))
+						uPoints++;
+					else
+						cPoints++;
+					
+		//			System.out.println("Error");
+				
+		}
+		
+//		System.out.println("The end");
 		
 	}
 	
-	public void displayScore() {
+	public static void displayScore() {
 		
 	}
 	
