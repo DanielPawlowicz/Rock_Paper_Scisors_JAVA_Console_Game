@@ -60,31 +60,43 @@ public class Main {
 		
 		if(uChoice.equals(cChoice)) {
 			
-			System.out.println("Draw!");
+			System.out.println("Draw");
 			
 				} else if(uChoice.equals("R")) {
 					
-					if(cChoice.equals("S"))
+					if(cChoice.equals("S")) {
 						uPoints++;
-					else
+						System.out.println("You won!");
+					}
+					else {
 						cPoints++;
+						System.out.println("You lost :(");
+					}
 					
 		//			System.out.println("Error");
 					
 				} else if(uChoice.equals("P")) {
 					
-					if(cChoice.equals("R"))
+					if(cChoice.equals("R")){
 						uPoints++;
-					else
+						System.out.println("You won!");
+					}
+					else {
 						cPoints++;
+						System.out.println("You lost :(");
+					}
 					
 		//			System.out.println("Error");
 					
 				} else {
-					if(cChoice.equals("P"))
+					if(cChoice.equals("P")){
 						uPoints++;
-					else
+						System.out.println("You won!");
+					}
+					else {
 						cPoints++;
+						System.out.println("You lost :(");
+					}
 					
 		//			System.out.println("Error");
 				
