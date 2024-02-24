@@ -99,15 +99,19 @@ public class Main {
 					}
 					
 		//			System.out.println("Error");
-				
 		}
 		
 //		System.out.println("The end");
 		
+		displayScore();
 	}
 	
 	public static void displayScore() {
-		
+		System.out.println("--------------------");
+		System.out.println("Score:");
+		System.out.println("You : Computer \n"
+						+ "  "+uPoints + " : "+ cPoints);
+		System.out.println("--------------------");
 	}
 	
 	public void nextRound() {
