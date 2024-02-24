@@ -117,19 +117,23 @@ public class Main {
 	}
 	
 	public static void nextRound() {
-		scanner = new Scanner(System.in);
-		System.out.println("Next round? (y/n) ");
-		uChoice = scanner.nextLine();
-		uChoice = uChoice.toUpperCase();
-		System.out.println(uChoice);
-		if(uChoice.equals("Y")) {
-//			break;
-			startGame();
+		while(true) {
+			scanner = new Scanner(System.in);
+			System.out.println("Next round? (y/n) ");
+			uChoice = scanner.nextLine();
+			uChoice = uChoice.toUpperCase();
+			System.out.println(uChoice);
+			if(uChoice.equals("Y")) {
+				System.out.println("-------NEW-ROUND-------");
+				break;
+			}
+			else if(uChoice.equals("N")) {
+				System.out.println("Thanks for playing. Have a nice day :)");
+				System.exit(0);
+			}
 		}
-		else if(uChoice.equals("N")) {
-			System.out.println("Thanks for playing. Have a nice day :)");
-			System.exit(0);
-		}
+		startGame();
+		
 	}
 	
 	public static void main(String[] args) {
